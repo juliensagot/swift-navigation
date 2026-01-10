@@ -147,6 +147,8 @@
               if isRepresenting { onDismiss?() }
               self.present(child, animated: !transaction.uiKit.disablesAnimations)
             }
+          } else if presentedViewController.isMovingFromParent {
+            self.present(child, animated: !transaction.uiKit.disablesAnimations)
           } else {
             self.dismiss(
               animated: !transaction.uiKit.disablesAnimations
